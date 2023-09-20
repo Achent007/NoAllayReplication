@@ -9,7 +9,6 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 import org.bukkit.inventory.PlayerInventory;
-
 import static be.achent.noallayreplication.NoAllayReplication.plugin;
 
 public class Event implements Listener {
