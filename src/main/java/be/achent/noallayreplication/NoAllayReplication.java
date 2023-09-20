@@ -19,6 +19,7 @@ public final class NoAllayReplication extends JavaPlugin {
         this.messages.saveDefaultConfig();
         this.commands.init();
         getServer().getPluginManager().registerEvents((Listener)new Event(), this);
+        (this.getCommand("noallayreplication")).setTabCompleter(new Commands());
     }
 
     public static NoAllayReplication getInstance() {
