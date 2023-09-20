@@ -20,10 +20,12 @@ public class Event implements Listener {
         PlayerInventory eq = event.getPlayer().getInventory();
 
         if ((e.getType() == EntityType.ALLAY && eq.getItemInMainHand().getType() == Material.AMETHYST_SHARD)){
-            event.setCancelled(true);
             Allay allay = (Allay)e;
-            allay.setCanDuplicate(false);
-            event.getPlayer().sendMessage(plugin.getMessage("Replication-locked"));
+            if ((allay.isDancing())){
+                allay.setCanDuplicate(false);
+                event.setCancelled(true);
+                event.getPlayer().sendMessage(plugin.getMessage("Replication-locked"));
+            }
         }
     }
 }
