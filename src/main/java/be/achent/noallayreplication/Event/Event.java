@@ -24,6 +24,16 @@ public class Event implements Listener {
                 allay.setCanDuplicate(false);
                 event.setCancelled(true);
                 event.getPlayer().sendMessage(plugin.getMessage("Replication-locked"));
+                return;
+            }
+        }
+        if ((e.getType() == EntityType.ALLAY && eq.getItemInOffHand().getType() == Material.AMETHYST_SHARD)){
+            Allay allay = (Allay)e;
+            if ((allay.isDancing())){
+                allay.setCanDuplicate(false);
+                event.setCancelled(true);
+                event.getPlayer().sendMessage(plugin.getMessage("Replication-locked"));
+                return;
             }
         }
     }

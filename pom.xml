@@ -6,7 +6,7 @@
 
     <groupId>NoAllayReplication</groupId>
     <artifactId>NoAllayReplication</artifactId>
-    <version>1.1</version>
+    <version>1.1.1</version>
     <packaging>jar</packaging>
 
     <name>NoAllayReplication</name>
