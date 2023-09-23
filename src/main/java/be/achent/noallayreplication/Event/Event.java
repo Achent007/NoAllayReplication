@@ -20,16 +20,16 @@ public class Event implements Listener {
 
         if ((e.getType() == EntityType.ALLAY && eq.getItemInMainHand().getType() == Material.AMETHYST_SHARD)){
             Allay allay = (Allay)e;
-            if ((allay.isDancing())){
+            if (allay.isDancing()){
                 allay.setCanDuplicate(false);
                 event.setCancelled(true);
                 event.getPlayer().sendMessage(plugin.getMessage("Replication-locked"));
                 return;
             }
         }
-        if ((e.getType() == EntityType.ALLAY && eq.getItemInOffHand().getType() == Material.AMETHYST_SHARD)){
+        if ((e.getType() == EntityType.ALLAY && eq.getItemInOffHand().getType() == Material.AMETHYST_SHARD && eq.getItemInMainHand().getType() == Material.AIR)){
             Allay allay = (Allay)e;
-            if ((allay.isDancing())){
+            if (allay.isDancing()){
                 allay.setCanDuplicate(false);
                 event.setCancelled(true);
                 event.getPlayer().sendMessage(plugin.getMessage("Replication-locked"));
