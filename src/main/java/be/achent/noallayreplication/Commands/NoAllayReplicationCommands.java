@@ -7,7 +7,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import java.io.File;
 
-public class noallayreplication implements CommandExecutor {
+public class NoAllayReplicationCommands implements CommandExecutor {
+
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         NoAllayReplication plugin = NoAllayReplication.getInstance();
         if (args.length == 0) {

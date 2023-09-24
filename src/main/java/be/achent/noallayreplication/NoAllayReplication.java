@@ -1,25 +1,25 @@
 package be.achent.noallayreplication;
 
-import be.achent.noallayreplication.Commands.Commands;
-import be.achent.noallayreplication.Event.Event;
+import be.achent.noallayreplication.Commands.NoAllayReplicationTabCompleter;
+import be.achent.noallayreplication.Commands.NoAllayReplicationCommands;
+import be.achent.noallayreplication.Event.Events;
 import org.bukkit.ChatColor;
-import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class NoAllayReplication extends JavaPlugin {
 
-    public Commands commands;
     public static NoAllayReplication plugin;
     private Messages messages;
 
     public void onEnable() {
         plugin = this;
         this.messages = new Messages();
-        this.commands = new Commands();
         this.messages.saveDefaultConfig();
-        this.commands.init();
-        getServer().getPluginManager().registerEvents((Listener)new Event(), this);
-        (this.getCommand("noallayreplication")).setTabCompleter(new Commands());
+
+        getServer().getPluginManager().registerEvents(new Events(), this);
+
+        getCommand("noallayreplication").setExecutor(new NoAllayReplicationCommands());
+        getCommand("noallayreplication").setTabCompleter(new NoAllayReplicationTabCompleter());
     }
 
     public static NoAllayReplication getInstance() {
@@ -37,9 +37,4 @@ public final class NoAllayReplication extends JavaPlugin {
     public void saveDefaultsMessages() {
         this.messages.saveDefaultConfig();
     }
-
-    public static NoAllayReplication getPlugin() {
-        return plugin;
-    }
-
 }
