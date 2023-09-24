@@ -1,7 +1,7 @@
 name: NoAllayReplication
 version: '${project.version}'
 main: be.achent.noallayreplication.NoAllayReplication
-api-version: 1.20
+api-version: '1.20'
 author: Achent
 description: Prevent Allay Replication
 commands:

@@ -1,13 +1,12 @@
 package be.achent.noallayreplication.Commands;
 
-import be.achent.noallayreplication.NoAllayReplication;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Commands implements TabCompleter {
+public class NoAllayReplicationTabCompleter implements TabCompleter {
 
     List<String> arguments = new ArrayList<>();
     @Override
@@ -27,11 +26,5 @@ public class Commands implements TabCompleter {
             }
         }
         return null;
-    }
-
-    public void init() {
-        NoAllayReplication plugin = NoAllayReplication.getInstance();
-        plugin.getCommand("noallayreplication").setExecutor(new noallayreplication());
-
     }
 }

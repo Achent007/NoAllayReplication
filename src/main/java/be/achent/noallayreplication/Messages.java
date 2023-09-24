@@ -1,6 +1,5 @@
 package be.achent.noallayreplication;
 
-import org.bukkit.configuration.Configuration;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.*;
@@ -14,7 +13,7 @@ public class Messages {
         NoAllayReplication plugin = NoAllayReplication.getInstance();
         if (this.languageConfigFile == null)
             this.languageConfigFile = new File(plugin.getDataFolder(), "language.yml");
-        this.languageConfig = (FileConfiguration) YamlConfiguration.loadConfiguration(this.languageConfigFile);
+        this.languageConfig = YamlConfiguration.loadConfiguration(this.languageConfigFile);
         Reader defConfigStream = null;
         try {
             defConfigStream = new InputStreamReader(plugin.getResource("language.yml"), "UTF-8");
@@ -23,7 +22,7 @@ public class Messages {
         }
         if (defConfigStream != null) {
             YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(defConfigStream);
-            this.languageConfig.setDefaults((Configuration)defConfig);
+            this.languageConfig.setDefaults(defConfig);
         }
     }
 
