@@ -1,3 +1,6 @@
-NoPermission: "&7[&bNoAllayReplication&7] &cVous n'avez pas la permission de faire ceci."
-Reloaded: "&7[&bNoAllayReplication&7] &aPlugin rechargé avec succès."
-Replication-locked: "&7[&bNoAllayReplication&7] &cLa réplication des &6allay &cest désactivée."
+# Message sent when player tied to use plugin command without the permission.
+NoPermission: "&7[&bNoAllayReplication&7] &cYou don't have the permission to do this."
+# Message sent to the executor of the reload command.
+Reloaded: "&7[&bNoAllayReplication&7] &aPlugin reloaded successfully."
+# Message sent when a player try to replicate an Allay.
+Replication-locked: "&7[&bNoAllayReplication&7] &cThe &6Allay &creplication is disabled."
