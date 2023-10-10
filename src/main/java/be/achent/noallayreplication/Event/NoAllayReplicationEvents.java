@@ -12,7 +12,7 @@ import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.PlayerInventory;
 
-public class Events implements Listener {
+public class NoAllayReplicationEvents implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void AmethystLock(PlayerInteractEntityEvent event) {
